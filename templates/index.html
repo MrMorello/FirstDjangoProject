@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма заявки</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div>
+    <h1 class="jumbotron text-center">Создать заявку</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2> Основание</h2>
+        </div>
+        <div class="col-md-8">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ order_form.as_p }}
+                {{ products_form.as_p }}
+                <div>
+                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
